@@ -61,6 +61,24 @@ The command will max out all clocks from all CPUS and GPUS also activate all CPU
 
 sudo /usr/bin/jetson_clocks
 
+## Check Fanspeed
+
+### Fanmode
+
+Run command below where mode is quiet or cool
+sudo /usr/sbin/nvpmodel -d MODE
+
+## Manually override fanspeed
+
+Run command below where X is value in 0-255. 
+
+echo X | sudo tee /sys/devices/pwm-fan/target_pwm
+
+To view the current fanspeed run command below
+sudo cat /sys/devices/pwm-fan/target_pwm
+
+
+
 ## Install JTOP => Highly recommend it.
 
 Ressource https://github.com/rbonghi/jetson_stats
