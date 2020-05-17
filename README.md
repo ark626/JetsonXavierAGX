@@ -3,8 +3,8 @@ Tipps and Tricks for the JetsonXavierAGX
 
 ## Installation and Flashing
 
-###First of all make a full install of Ubuntu 16 to some drive, do not use a USB or Try out version since this causes issues.
-###Second make sure that there is a large enough device with ext4 to store the data from Ubuntu + the Flashing tools
+### First of all make a full install of Ubuntu 16 to some drive, do not use a USB or Try out version since this causes issues.
+### Second make sure that there is a large enough device with ext4 to store the data from Ubuntu + the Flashing tools
 
 Now you can install the SDK Manager. 
 The Deb file can be aquired here https://developer.nvidia.com/nvidia-sdk-manager
