@@ -38,6 +38,31 @@ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/
 ## Install tensorflow 1.x
 sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 ‘tensorflow<2’
 
+## Install specific version of tensorflow
+Also it is possible to install a specific tensorflow version
+https://developer.download.nvidia.com/compute/redist/jp/v44/tensorflow/
+
+## Install Pytorch
+To install pytorch one can use the whl files in the following post
+https://forums.developer.nvidia.com/t/pytorch-for-jetson-nano-version-1-5-0-now-available/72048
+
+## Special Pytorch + Tensorflow Settings
+Sometimes if Tensorflow is used with Pytorch, it can try to use all memory.
+This is of course bad news, because the RAM is a combined RAM for GPU and CPU.
+To prevent a overallocation for CUDA one can Limit the RAM CUDA uses. For TF2 this looks like this:
+
+gpus = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_virtual_device_configuration(gpus[0], [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=CUDARAMINMB)])
+
+CUDARAMINMB Is the CUDA RAM Limit in MB. The two lines above can be placed after the import of Tensorflow.
+
+Also when using Tensorflow with Pytorch, there often is a weird error message about a block issue.
+This happens when Tensorflow is imported first.
+Make sure to import Tensorflow AFTER Pytorch, then it will work.
+
+
+
+
 
 # Change Powermode
 
