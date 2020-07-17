@@ -116,3 +116,7 @@ sudo -H pip install -U jetson-stats
 
 sudo jtop
 
+
+# Backup Mirror for WHL Files
+https://drive.google.com/drive/folders/1Ee9S9Ab892n_rONX4zqQdbjjt5rTnHwV?usp=sharing
+
